@@ -1,0 +1,33 @@
+Feedback comments for -> ConnorNagel,
+
+Grading Scripts:
+================
+-> passing grader, good job.
+
+Code Quality:
+================
+-> required macros used, good.
+-> required targets implemented correctly, good.
+-> required gcc flags & Makefile features used, good.
+
+README:
+================
+-> -10 points, No personal README file.
+
+
+======================
+Grade: 90/100.
+======================
+50/50  Grading-Scripts.
+-0     passed...
+40/40  Code-Quality.
+-0     code formatting
+-0     code comments/doc
+-0     code modularity
+-0     code semantics
+0/10   README.md-File.
+0      Late-Penalty.
+======================
+
+Cheers,
+Joey.

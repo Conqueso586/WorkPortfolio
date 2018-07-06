@@ -1,0 +1,76 @@
+******************
+Project 4 CircuitTracer
+CS221
+6/29/2016
+Connor Nagel
+******************
+
+OVERVIEW:
+
+    This program read an input file and then determines the shortest path from the starting point to the ending point and prints the resulting paths to the console.
+    
+INCLUDED FILES:
+
+    README - this file
+    Stack.java - groups data using the stack interface
+    Queue.java - groups data using the queue interface
+    CircuitTracer.java - The driver class that creates Tracestates
+    CircuitBoard.java - Reads input files and creates CircuitBoards
+    Storage.java - class that uses either the stack or queue class to hold TraceState object
+
+COMPILING AND RUNNING:
+
+    Change working directory to the location that holds the program files.
+
+    javac CircuitTracer.java - compiles the program
+    java CircuitTracer x y inputFile - proper syntax to running the program
+
+    x will accept either:-s or -q - This class can be used with either a stack or a queue. 
+    y will accept either:-c or -g - c runs the program in console mode, while 
+    g would run the program in GUI mode (GUI mode not available)
+
+
+ANALYSIS:
+
+What is the order of state evaluation and new state generation for a Storage object that uses a stack compared to one that uses a queue?
+
+    The order of state evaluation is n^2 
+
+How is the total number of search states affected by the choice of stack or queue? 
+
+    From what I could tell there was no difference in the number of search states, the difference is the order that the TraceStates are stored and returned.
+
+What is the Big-Oh runtime for the search algorithm?
+
+    The Big-Oh runtime is n, because the while loop will run until all the objects in the stack or queue have been removed or n times, and then if we assume that every TraceState in the list is not adjacent to the ending point then each TraceState will then create at most 4 more TraceStates, which is O(1).
+
+How is memory use (the number of states in Storage at one time) affected by the choice of underlying structure?
+    It shouldn't be affected, the number of states passed into and out of either storage option will be the same, but they will be removed in different ways which will change which states are evaluted first.
+
+Does using one of the storage structures find a solution faster than the other? Always?
+
+I dont think either storage structure will always find a solution faster. Although I imagine that a queue will find a solution faster because it grabs the oldest TraceState from the list and then creates new paths from that. A stack will pull from the end of the list which may make the program take more time assessing each state.
+
+Does using either of the storage structures guarantee that the first solution found will be an ideal solution?
+    No
+
+
+PROGRAM DESIGN AND IMPORTANT CONCEPTS:
+
+    The main function of this program is to find paths that give the shortest path length between a starting point to an ending point on a circuitboard. The class CircuitTracer uses the other included classes to read and store input files that contain virtual circuiboard layouts. 
+    
+    The class CircuitBoard reads the input file given by CircuitTracer and creates a new CircuitBoard. The circuit board is then scanned for its starting and ending points. Once the starting point is found then CircuitTracer uses the new board to create traced paths on the board to see all the possible paths that you could take to reach the endpoint. 
+    
+    Each trace is stored in a storage object that uses either a stack or queue to hold the TraceStates. CircuitTracer then uses the storage object to check to see if any of the paths have reached the end. If they haven't, then all the open spaces around the TraceState become new TraceStates. If the TraceState is equal or smaller to the current smallest path length, then the TraceState is added to the valid path list. once all possible paths have been exhausted, the list that holds the shortest paths is then printed to the console.
+
+
+
+TESTING:
+
+    In order to test the program I read each error that I recieved and used it to target the most problematic code in order to diagnose the problem. Once I found where the issue resided I used breakpoints to read through each step in the code, after each significant assignment I checked to make sure that what was assigned to the variable was correct. 
+
+DISCUSSION:
+
+These last two projects have been really fun to work through, its too bad I had take so much time just to get them submitted, but I certainly felt that I learned the most in these last few weeks. This project actually took me less time to figure out than project 3 and I'm not sure if that means that I'm getting better at coding or if the concepts of this program were just easier to understand for me.
+
+I want to use this discussion section to say that I've really enjoyed the challenge that this class brought to me. It has been a long time since I've felt a clear sense of growth and accomplishment in one my classes. Writing these projects have made me even more excited for what is to come. Have a great summer Mr. Thomas!

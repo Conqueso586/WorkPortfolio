@@ -1,0 +1,20 @@
+# Project 3: Jukebox
+
+* Author: Connor Nagel
+* Class: CS121 Section 1
+* Semester: Spring 2016
+
+## Overview 
+This program will run the Jukebox program, which uses the playlist and song classes to
+create a playable list of songs
+
+## Compiling and Using
+javac Jukebox.java
+java Jukebox
+make sure that all the files needed are located in the correct spot, or else the program won't load them.
+
+## Discussion
+
+I had a lot of problems having to do with the toString method in the playlist class,
+I couldn't figure out to how to print out each song on an individual line. 
+Due to this, I wasn't able to fully complete this assignment.

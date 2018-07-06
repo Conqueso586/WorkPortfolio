@@ -1,0 +1,17 @@
+
+Grade: /20
+
+Proper project layout and makefiles: 
+
+Features:
+
+1. (2 points) Filename completion and history: 
+2. (2 points) Normal command execution: 
+3. (2 points) Handling empty commands: 
+4. (2 points) Handling EOF: 
+5. (2 points) Exit command: 
+6. (2 points) Change Directory command: 
+7. (4 points) Create an empty list and link to provided list library: 
+8. (4 points) Screenshot of project plan on Trello (named pm.png): 
+
+Comments:

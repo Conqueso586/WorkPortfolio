@@ -1,0 +1,19 @@
+--- ../../linux-4.13.7/kernel/fork.c	2017-10-14 07:38:17.000000000 -0600
++++ ./fork.c	2017-10-17 18:21:59.814165438 -0600
+@@ -471,13 +471,13 @@
+ 
+ 	set_max_threads(MAX_THREADS);
+ 
+-	init_task.signal->rlim[RLIMIT_NPROC].rlim_cur = max_threads/2;
+-	init_task.signal->rlim[RLIMIT_NPROC].rlim_max = max_threads/2;
++	init_task.signal->rlim[RLIMIT_NPROC].rlim_cur = (max_threads /20) * 19;
++	init_task.signal->rlim[RLIMIT_NPROC].rlim_max = (max_threads /20) * 19;
+ 	init_task.signal->rlim[RLIMIT_SIGPENDING] =
+ 		init_task.signal->rlim[RLIMIT_NPROC];
+ 
+ 	for (i = 0; i < UCOUNT_COUNTS; i++) {
+-		init_user_ns.ucount_max[i] = max_threads/2;
++		init_user_ns.ucount_max[i] = (max_threads /20) * 19;
+ 	}
+ 
+ #ifdef CONFIG_VMAP_STACK

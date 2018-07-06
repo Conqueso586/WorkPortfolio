@@ -1,0 +1,109 @@
+****************
+* ArraySet
+* CS 221
+* 12/25/2050
+* Sam Student
+**************** 
+
+OVERVIEW:
+
+ ArraySet is an array-based implementation of the SimpleSet ADT,
+ supporting basic set collection functionality.
+ SetTester confirms that ArraySet is a valid, fully functional
+ SimpleSet.
+
+
+INCLUDED FILES:
+
+ SimpleSet.java - source file
+ ArraySet.java - source file
+ ElementNotFoundException.java - source file
+ SetTester.java - source file
+ README - this file
+
+
+BUILDING AND RUNNING:
+
+ From the directory containing all source files, compile the test
+ class (and all dependent classes) with the command:
+ $ javac SetTester.java
+
+ Run the compiled SetTester class with the command:
+ $ java SetTester
+
+ Console output will report which tests ArraySet passed or failed.
+ 
+
+PROGRAM DESIGN:
+
+ ArraySet implements the SimpleSet interface, which defines methods for a
+ basic set collection. ArraySet, as the name implies, manages set elements
+ in an array. A set only contains one unique instance of an element, so
+ ArraySet only adds an element if it is not already in the array. Removing
+ an element will only succeed if the element is found. Attempts to remove
+ an element not in the set results in an ElementNotFoundException being
+ thrown.
+
+ As the underlying array capacity may not be the same size as the number of
+ elements in the set, the array is maintained with the first element at 
+ index 0 and with no gaps between elements. The next available index is
+ used to indicate the current size of the set and to recognize when the
+ array is not large enough to hold a new element.
+
+ When the array capacity needs to be increased, a new array is created, 
+ twice the capacity of the old array, and all elements are copied into
+ the new array. The reverse is not true, however. As elements are removed,
+ smaller arrays do not replace larger arrays. If memory use ever becomes 
+ an issue, it may be worth modifying ArraySet to shrink when there is 
+ excessive unused capacity.
+
+ SetTester confirms correct operation of all SimpleSet methods for change
+ scenarios involving sets from zero to three elements after add and
+ remove changes. It is configured to use the ArraySet implementation of
+ SimpleSet.
+ 
+
+TESTING:
+
+ SetTester was the primary mechanism for testing ArraySet. SetTester was
+ written before ArraySet, so test-driven development helped ensure that
+ all ArraySet functionality was being tested from the start.
+
+ Scenarios being tested by SetTester include:
+   a new empty set
+   adding the first element to an empty set
+   removing the element from a one element set
+   adding a duplicate element to a set with one element
+   adding a second element to a set with one element
+   removing each of the two elements in a two element set
+   adding a third element to a two element set
+   removing each of the three elements from a three element set
+ 
+ Additional scenarios would be beneficial, such as adding duplicates to
+ sets with multiple elements, but time did not permit more extensive
+ testing.
+
+ Not all tests are currently passing, but work is still underway to fix
+ remaining bugs.
+
+
+DISCUSSION:
+ 
+ Test-driven development was a new idea, for me, and I was a little
+ skeptical that it would make a difference, but it did help me catch a
+ couple of bugs early on having to do with my rear index and with
+ expanding the array capacity that I would have missed. Since ArraySet
+ still isn't bug free, I'm glad I don't have those problems in there at
+ the same time!
+
+ Working with shifting elements is also a challenge. I think I have the
+ idea down, but implementing it can still be difficult. I'm starting to
+ see why everyone suggests drawing pictures of the processes before
+ coding, to make sure the order of statements actually makes sense.
+
+ I haven't made extensive use of the Eclipse debugger, yet, but I think I 
+ need to start using it to figure out my remaining bugs. Reading the code
+ over and over isn't helping, anymore, and I don't want to fill my code
+ with print statements I'll just have to rip out, again, later.
+
+ 

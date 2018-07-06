@@ -1,0 +1,54 @@
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+public class ParseAndRewrap {
+	
+	public static final int ERROR_CODE = 1;
+	public static final int MAX_CHAR = 20;
+	public static void main (String args[]){
+		Scanner scan = new Scanner(System.in);	
+		
+		System.out.println("Enter a filename: ");
+		String filename = scan.nextLine().trim();
+		
+		
+		
+		File file = new File(filename);
+		try{
+			Scanner fileScan = new Scanner(file);
+			
+			while(fileScan.hasNextLine()){
+		
+			
+			String line = fileScan.nextLine();
+			
+			System.out.println(line);
+			
+			Scanner lineScan = new Scanner(line);
+			
+			while(lineScan.hasNext()){
+			
+				String token = lineScan.next();
+				String linewrap = token + " ";
+				
+			if(linewrap.length() < MAX_CHAR){
+				System.out.println(linewrap);
+				
+			}
+			
+		}
+		
+	}
+		catch(FileNotFoundException errorObject){
+			
+			System.out.println("File \"" + filename + "\" could not be opened.");
+			System.out.println(errorObject.getMessage());
+			System.exit(ERROR_CODE);
+		}
+		
+	}
+	
+	
+	
+	
+}

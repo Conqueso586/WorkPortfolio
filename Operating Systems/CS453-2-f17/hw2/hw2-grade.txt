@@ -1,0 +1,8 @@
+
+Name: ConnorNagel@u.boisestate.edu
+
+-kernel build (20 points): ok
+-kernel modify (10 points): ok
+-README file and patch (10 points): 
+	-You mention the new value of max-thread but not the old one? -4
+-grade:   36/40

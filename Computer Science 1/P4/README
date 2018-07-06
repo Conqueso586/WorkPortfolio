@@ -1,0 +1,14 @@
+# Project 4: 
+## Overview
+
+This program takes in files from command line, parses through each line and counts the number of lines, words, and characters in the file. Then all the stats are printed to the screen using a toString method, including average word size and number of times characters are used.
+
+## Compiling and Using
+
+    javac ProcessText.java - compiles the driver class for the program.
+    java ProcessText filename filename2 - this command tells the computer to run processtext and then passes the documents filename and filename2 to the program for parsing.
+    
+## Discussion
+
+    I had the hardest time working on getting the letter count array to print with the rest of the toString. Most of my time was spent trying to adjust methods to fit the issue. I ended up using string builder to 
+    help with printing out the letter and word arrays. Do to this I avoided using the getLetterCount and getWordLengthCount methods.

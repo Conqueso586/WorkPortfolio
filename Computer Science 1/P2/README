@@ -1,0 +1,23 @@
+#Project 2: FindParking
+
+* Author: Connor Nagel
+* Class: CS121 Section X
+* Semester: Spring 2016
+
+## Overview
+This program will randomly generate a cars position and the positions of 4 streets. It will then determine which of the parking locations is closest.
+
+
+## Compiling and Using
+
+Use the cd command to navigate into the file's location.
+
+Type the following commands into the terminal.
+javac FindParking.java
+java FindParking
+
+The prompts will guide you through the rest.
+
+## Discussion
+
+I thought this was the most fun project yet, I had a great time putting it together. I had a difficult time remembering what I needed to import for formatting decimals. I spent a while before I figured out that I imported java.lang.Formatting instead of java.text.DecimalFormat.

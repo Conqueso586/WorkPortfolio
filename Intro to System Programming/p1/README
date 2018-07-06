@@ -1,0 +1,29 @@
+Project 1
+
+
+Author: Connor Nagel
+Class: CS253 Section 1
+
+Overview
+	
+	This program takes in text and counts the number of characters, words, digits and lines used in the input text.
+
+
+Compiling and Using
+
+	To compile the code use: gcc -Wall main.c
+	
+	Once the code has been compiled, use ./a.out < data to run the program. The output will then be displayed on the screen.
+
+
+Testing
+
+	I used the provided data file to compare the results from my code to the results from the given program 'grader'. This way I was able to know what parts of the code still needed fixing. I also used the vim errors to give me a better idea of what to fix.
+
+Discussion
+
+	I used vim to write code for the first time and I a good sense of the benefits of using vim over eclipse. It was really easy to rewrite and test code all on the same screen.
+
+	Most of my errors were do to minor mistakes in my syntax or a mix up with the java syntax that I am more accustomed to. 
+
+

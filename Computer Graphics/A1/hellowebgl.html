@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Hello WebGL</title>
+	<meta name="generator" content="BBEdit 10.5" />
+
+<!-- load matrix manipulation helper methods -->	
+<script type="text/javascript" src="glMatrix_util.js"></script>
+
+<!-- define our shaders -->
+<script id="shader-fs" type="x-shader/x-fragment">
+// define our fragment shader - this controls the colors of pixels.
+    precision mediump float;
+
+    void main(void) {
+        gl_FragColor = vec4(1.0, 0.5, 1.0, 1.0);
+    }
+</script>
+
+<script id="shader-vs" type="x-shader/x-vertex">
+// define our Vertex Shader - this controls the position of our vertices.
+    attribute vec3 aVertexPosition;
+
+    uniform mat4 uMVMatrix;
+    uniform mat4 uPMatrix;
+
+    void main(void) {
+        gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+    }
+</script>
+	
+<script> <!-- define Javascript functions for drawing WebGL items -->
+
+
+function initWebGLContext(aname) {
+  gl = null;
+  var canvas = document.getElementById(aname);
+  try {
+    // Try to grab the standard context. If it fails, fallback to experimental.
+    gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+  }
+  catch(e) {}
+  
+  // If we don't have a GL context, give up now
+  if (!gl) {
+    alert("Unable to initialize WebGL. Your browser may not support it.");
+    gl = null;
+  }
+  gl.viewportWidth = canvas.width;
+  gl.viewportHeight = canvas.height;
+  return gl;
+}
+// define the function to initial WebGL and Setup Geometry Objects
+function initGLScene()
+{
+    // Initialize the WebGL Context - the gl engine for drawing things.
+    var gl = initWebGLContext("hellowebgl"); // The id of the Canvas Element
+        if (!gl) // if fails simply return
+     {
+          return;
+     }
+     // succeeded in initializing WebGL system
+     return gl;     
+}
+
+
+   function getShader(gl, id) {
+        var shaderScript = document.getElementById(id);
+        if (!shaderScript) {
+            return null;
+        }
+
+        var str = "";
+        var k = shaderScript.firstChild;
+        while (k) {
+            if (k.nodeType == 3) {
+                str += k.textContent;
+            }
+            k = k.nextSibling;
+        }
+
+        var shader;
+        if (shaderScript.type == "x-shader/x-fragment") {
+            shader = gl.createShader(gl.FRAGMENT_SHADER);
+        } else if (shaderScript.type == "x-shader/x-vertex") {
+            shader = gl.createShader(gl.VERTEX_SHADER);
+        } else {
+            return null;
+        }
+
+        gl.shaderSource(shader, str);
+        gl.compileShader(shader);
+
+        if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+            alert(gl.getShaderInfoLog(shader));
+            return null;
+        }
+
+        return shader;
+    }
+
+
+    var shaderProgram;
+
+function initShaders()
+{
+    var fragmentShader = getShader(gl, "shader-fs");
+    var vertexShader = getShader(gl, "shader-vs");
+
+        shaderProgram = gl.createProgram();
+        gl.attachShader(shaderProgram, vertexShader);
+        gl.attachShader(shaderProgram, fragmentShader);
+        gl.linkProgram(shaderProgram);
+
+        if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
+            alert("Could not initialise shaders");
+        }
+
+        gl.useProgram(shaderProgram);
+
+        shaderProgram.vertexPositionAttribute = gl.getAttribLocation(shaderProgram, "aVertexPosition");
+        gl.enableVertexAttribArray(shaderProgram.vertexPositionAttribute);
+
+        shaderProgram.pMatrixUniform = gl.getUniformLocation(shaderProgram, "uPMatrix");
+        shaderProgram.mvMatrixUniform = gl.getUniformLocation(shaderProgram, "uMVMatrix");
+    }
+
+
+// create our basic model and view matrix
+var mvMatrix = mat4.create();
+
+// create our projection matrix for projecting from 3D to 2D.
+var pMatrix = mat4.create();
+
+function setMatrixUniforms()
+{
+        gl.uniformMatrix4fv(shaderProgram.pMatrixUniform, false, pMatrix);
+        gl.uniformMatrix4fv(shaderProgram.mvMatrixUniform, false, mvMatrix);
+}
+
+
+
+// Create Geometry information for drawing a Triangle and drawing a Square
+var triangleVertexPositionBuffer;
+var squareVertexPositionBuffer;
+
+// create and initialize our geometry objects
+function initGeometry() {
+triangleVertexPositionBuffer = gl.createBuffer();
+gl.bindBuffer(gl.ARRAY_BUFFER, triangleVertexPositionBuffer);
+
+        var vertices = [
+             0.0,  1.0,  0.0,
+            -1.0, -1.0,  0.0,
+             1.0, -1.0,  0.0
+        ];
+
+gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
+triangleVertexPositionBuffer.itemSize = 3;
+triangleVertexPositionBuffer.numItems = 3;
+
+squareVertexPositionBuffer = gl.createBuffer();
+gl.bindBuffer(gl.ARRAY_BUFFER, squareVertexPositionBuffer);
+vertices = [
+             1.0,  1.0,  0.0,
+            -1.0,  1.0,  0.0,
+             1.0, -1.0,  0.0,
+            -1.0, -1.0,  0.0
+        ];
+gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
+squareVertexPositionBuffer.itemSize = 3;
+squareVertexPositionBuffer.numItems = 4;
+}
+
+// Initialize our texture data and prepare it for rendering
+// for later expansion
+function initTextures()
+{
+
+}
+
+
+//Initialize everything for starting up a simple webGL application
+function startHelloWebGL()
+{
+   // attach 'Handler' functions to handle events generated by the canvas.
+   // for when the browser is resized or closed.
+
+   // first initialize webgl components 
+   var gl = initGLScene();
+   
+   // now build basic geometry objects.
+   initShaders();
+   initGeometry();
+   initTextures();
+   
+   
+   // Draw the Scene
+   drawScene(gl);
+
+   // If doing an animation need to add code to rotate our geometry
+   
+}
+
+// This function draws a basic webGL scene
+// first it clears the framebuffer.
+// then we define our View positions for our camera using WebGL matrices.
+// OpenGL has convenience methods for this such as glPerspective().
+// finally we call the gl draw methods to draw our defined geometry objects.
+function drawScene(gl)
+ {
+// alert ("GL=" + gl.viewportWidth);
+        gl.viewport(0, 0, gl.viewportWidth, gl.viewportHeight);
+        gl.clearColor(0.0,0.0,0.0,1.0);
+        gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+
+        // initialize a Perspective Projection view position.
+        mat4.perspective(45, gl.viewportWidth / gl.viewportHeight, 0.1, 100.0, pMatrix);
+        mat4.identity(mvMatrix);
+        
+        // translate the view a bit and draw the Big Translate.
+        mat4.translate(mvMatrix, [-1.5, 0.0, -7.0]);
+        gl.bindBuffer(gl.ARRAY_BUFFER, triangleVertexPositionBuffer);
+        gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, triangleVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
+        setMatrixUniforms();
+        gl.drawArrays(gl.TRIANGLES, 0, triangleVertexPositionBuffer.numItems);
+
+        // translate the model view matrix and draw the Big Square
+        mat4.translate(mvMatrix, [3.0, 0.0, 0.0]);
+        gl.bindBuffer(gl.ARRAY_BUFFER, squareVertexPositionBuffer);
+        gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, squareVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
+        setMatrixUniforms();
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, squareVertexPositionBuffer.numItems);
+}
+
+
+</script>
+
+</head>
+
+<!-- declare the "body" of the HTML document-->
+<!-- the onload attribute specifies a javascript function to execute when the body tag is loaded into the browser -->
+
+<body onload="startHelloWebGL()">
+<h1>Hello WebGL First Example</h1>
+
+<!-- embed the HTML5 Canvas Drawing object on the page.-->
+<!-- Name the canvas 'hellowebgl' for the javascript code. -->
+<canvas id="hellowebgl" width="640" height=480>
+If you're seeing this your web browser doesn't support the &lt;canvas>&gt; element. Ouch!
+</canvas>
+
+</body>
+</html>

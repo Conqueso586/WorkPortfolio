@@ -1,0 +1,68 @@
+Feedback comments for -> ConnorNagel,
+
+Grading Scripts:
+================
+-> -50 points semantics error in main.c
+-> stop by the tutoring lab to discuss this if you are still unsure how to fix this.
+
+Your results---
+Number of Chars:34553
+Number of Lines: 769
+Number of Words:5770
+
+Grader Results---
+words: 5770
+chars: 34553
+lines: 769
+
+Code Quality:
+================
+-> -5 points, Inconsistent code formatting. 
+your code -> Tab inconsistencies...
+-> -3 points, Issues with comments.
+your code -> lines like this ++ndigit[c-'0']; should be commented to explain non-trivial code...
+-> Good variable names.
+-> Good use of an int[] for digit count storage.
+-> -1 point, main() return non-zero, see comments below...
+
+README:
+================
+-> -2 points, Poor README discussion section. "errors were do to minor mistakes"... This section should include a very specific problem you had, accompanied with your unique solution to that problem. If no problems arose, comparatively what was the most challenging aspect of the project? This section is what helps us improve future semester projects.
+-> "vim errors", I'm confused... how would errors in vim help fix problems in your code?
+
+NOTES TO STUDENT:
+================
+In C a return of non-zero from main() is used to notify the caller of your program that it was a non-successful execution. Please use return 0 from main() to indicate success... exit(0) will also accomplish this but it's standard to use the return 0;
+
+Please keep note that <your location>/backpack directory should ONLY contain the following (viewed with ls -a ):
+.  ..  CS253-1-f16
+
+Please keep note that <your location>/backpack/CS253-1-f16 directory should ONLY contain the following (viewed with ls -a ):
+. .. p1 p2
+
+Please keep note that <your location>/backpack/CS253-1-f16/p1 directory should ONLY contain the following (viewed with ls -a ):
+. ..  backpack.sh data grader main.c Makefile README.md
+
+When developing code you should make it a high priority to keep your code as readable as possible - by using well named variables/functions, proper spacing & code formatting, by avoiding global variables (keeping the scope of variables within a small readable range), adhering to the "principle of least astonishment", using good/concise comments that are between 3 ~ 7 words to explain conceptually difficult or non-trivial code, and by keeping your logic the least complicated as possible. Most of the cost of software engineering projects is in maintaining the code, not in the initial development. So if you find yourself being a software dev engineer one day, you'll most certainly have Test & QA engineers scrutinize and debug your code. It is imperative that you don't waste other peoples time struggling to read your code since it will certainly cost your company money, and if continued can cost you your job.
+
+======================
+Grade: 39/100
+======================
+0/50   Grading-Scripts.
+-50    failed...
+31/40  Code-Quality.
+-5     code formatting
+-3     code comments/doc
+-0     code modularity
+-1     code semantics
+8/10  README.md-File.
+-0     used template
+-0     grammar/spelling
+-0     correct statements
+-0     sources
+
+-0     Late-Penalty.
+======================
+
+Cheers,
+Joey.

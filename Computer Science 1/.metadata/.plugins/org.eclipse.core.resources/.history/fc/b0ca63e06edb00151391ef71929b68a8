@@ -1,0 +1,28 @@
+import java.util.Scanner;
+import java.lang.Math;
+import java.util.Random;
+public class FindParking {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		
+		
+		System.out.println("input seed:");
+		long s = in.nextLong();
+		
+		Random rand = new Random(s);
+		
+	    System.out.println("Time to park: ");
+		in.nextInt();
+		
+		int carX = rand.nextInt(100);
+		int carY= rand.nextInt(100);
+		
+		System.out.println("Position of vehicle: x = "+carX + "y = "+ carY);
+		
+		
+		
+		in.close();
+	}
+
+}

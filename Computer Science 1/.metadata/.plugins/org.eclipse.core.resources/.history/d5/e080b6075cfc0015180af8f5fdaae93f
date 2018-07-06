@@ -1,0 +1,133 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+public class TextStatistics implements TextStatisticsInterface {
+	private int CharCount = 0;
+	private int WordCount = 0;
+	private int LineCount = 0;
+	private int[] LetterCount = new int [27];
+	private int[] WordLengthCount;
+	private double AverageWordLength = 0;
+	private char letter = 'a';
+	 final int NUMCHARS = 26;
+     int[] upper = new int[NUMCHARS];
+     int[] lower = new int[NUMCHARS];
+     int other = 0;
+     
+     
+	Scanner scan = new Scanner(System.in);
+
+	public TextStatistics(File file){
+		
+		try{
+			Scanner fileScan = new Scanner(file);
+			
+
+		while (fileScan.hasNextLine()) {
+
+			String line = fileScan.nextLine();
+			CharCount += line.length();
+			StringTokenizer tokenizer = new StringTokenizer(line, " ,.;:'\"&!?-_\n\t12345678910[]{}()@#$%^*/+-");
+			LineCount++;
+			while (tokenizer.hasMoreTokens()) {
+				
+				String word = tokenizer.nextToken();
+				WordCount++;
+				
+				int wordLength = word.length();
+				
+				//WordLengthCount[wordLength]++;
+				for(int i = 0 ; i < wordLength -1; i++){
+				 letter = word.charAt(i);
+					
+				
+				 if(letter>='a' && 'z'>=letter){
+					 lower[letter-'a']++;
+				 }
+				 else if(letter>='A' && 'Z'>=letter){
+					 upper[letter-'A']++;
+				 }
+				 else {other++;}
+				}
+				}
+			}
+		}
+	
+		catch (FileNotFoundException errorObject) {
+
+			System.out.println("File \"" + file + "\" could not be opened.");
+			System.out.println(errorObject.getMessage());
+		
+		}}
+
+
+
+		public int getCharCount() {
+			
+			return CharCount;
+		}
+
+	
+		public int getWordCount() {
+		
+			return WordCount;
+		}
+
+		
+		public int getLineCount() {
+			
+			return LineCount;
+		}
+
+		
+		public int[] getLetterCount() {
+			
+			return LetterCount;
+		}
+
+		
+		public int[] getWordLengthCount() {
+			
+			return WordLengthCount;
+		}
+
+	
+		public double getAverageWordLength() {
+			
+			return AverageWordLength;
+		}
+		public char getUpper(){
+			
+			char charValue = 'a';
+			for (letter =0; letter < upper.length; letter++)
+		      {
+		        charValue = (char)(letter + 'A');
+		         System.out.print(": " + upper[letter]);
+		         System.out.print("\t\t" + (char) (letter + 'a'));
+		         System.out.println(": " + lower[letter]);
+		      }
+
+		      System.out.println();
+		      System.out.println("Non-alphabetic characters: " + other);
+		      //charValue = 'b';
+			return charValue;
+		}
+		
+
+		public String toString(){
+			return "==========================================================\n" 
+					+ getLineCount()+" lines"+"\n" + getWordCount() +" words"+"\n"+ 
+					getCharCount() +" characters" + "\n------------------------------"+ getLetterCount() + 
+					"\n------------------------------" + getUpper();
+					
+					
+			
+			
+			
+		}
+
+
+	}
+

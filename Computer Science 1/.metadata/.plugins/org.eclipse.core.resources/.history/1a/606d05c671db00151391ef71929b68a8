@@ -1,0 +1,53 @@
+import java.util.Scanner;
+import java.util.Random;
+public class FindParking {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		
+		
+		System.out.println("Enter random seed:");
+		long s = in.nextLong();
+		
+		Random rand = new Random(s);
+		
+	    System.out.println("Enter parking time (minutes): ");
+		in.nextInt();
+		
+		int carX = rand.nextInt(100);
+		int carY= rand.nextInt(100);
+		
+		System.out.println("Position of vehicle: x = "+carX + " y = "+ carY);
+		
+		
+		int PS1x = rand.nextInt(100);
+		int PS1y = rand.nextInt(100);
+		ParkingSpot Parkingspot1 = new ParkingSpot("Beacon",PS1x,PS1y);
+		int PS2x = rand.nextInt(100);
+		int PS2y = rand.nextInt(100);
+		ParkingSpot Parkingspot2 = new ParkingSpot("Manitou",PS2x,PS2y);
+		
+		int PS3x = rand.nextInt(100);
+		int PS3y = rand.nextInt(100);
+		ParkingSpot Parkingspot3 = new ParkingSpot("Broadway",PS3x,PS3y);
+		Parkingspot3.setCharge(.30);
+		int PS4x = rand.nextInt(100);
+		int PS4y = rand.nextInt(100);
+		ParkingSpot Parkingspot4 = new ParkingSpot("Euclid",PS4x,PS4y);
+		Parkingspot4.setCharge(.30);
+		
+		
+		
+		int z= rand.nextInt(100);
+		System.out.println(Parkingspot1);
+		System.out.println(Parkingspot2);
+		System.out.println(Parkingspot3);
+		System.out.println(Parkingspot4);
+		
+		
+		
+		in.close();
+	
+	}
+
+}

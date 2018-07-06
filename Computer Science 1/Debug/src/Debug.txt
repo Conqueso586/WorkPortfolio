@@ -1,0 +1,14 @@
+Connor Nagel
+
+1st Bug: testIsEmpty []
+
+I placed breakpoints in the main method and stepped over until I found the first error. I stepped into the isEmpty method and found that rear would have to be equal to 0 and not > 0 in order for it to result in a true boolean value.
+
+2nd Bug: testIsEmpty [] add(A)
+
+After skipping to the next point of error I realized that since the element is added, then the isEmpty method should return false. So I concluded that there must be something wrong with the add method. I found that the if statement in that method didn't increment the rear count. So the isEmpty value would always equal the inital value 0.
+
+3rd Bug: testRemove [A] add(B)
+
+This time the bug was found when an element was removed from a set that had just added B to [A]. The error given was an ArrayIndexOutOfBoundsException. So I stepped over the remove method to find where the index goes out of bounds.The while loop that I stepped over caught the exception after the while loop got to 2. Since the array only has elements at 0 and 1, the exception is thrown. So I changed (i < rear) to (i < rear -1).
+

@@ -1,0 +1,75 @@
+
+Name: ConnorNagel@u.boisestate.edu
+
+Testing: 
+	-Submission quality:  ok
+	-Build/Makefile:   ok
+	-Compiling:  
+		-There should be no warnings... -4
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+amit@localhost p1(p1_branch)]$ make
+cd mydash-src; make
+make[1]: Entering directory '/home/amit/Documents/CS453-grades/students/ConnorNagel@u.boisestate.edu/backpack/CS453-2-f17/p1/mydash-src'
+gcc -g  -Wall -I. -I../../p0/include -MMD   -c -o mydash.o mydash.c
+mydash.c: In function ‘main’:
+mydash.c:31:36: warning: implicit declaration of function ‘git_version’ [-Wimplicit-function-declaration]
+    printf("Project Version: %d \n",git_version());
+                                    ^~~~~~~~~~~
+gcc -g  -Wall -I. -I../../p0/include -MMD   -c -o error.o error.c
+gcc -g  -Wall -I. -I../../p0/include -MMD   -c -o dashutils.o dashutils.c
+echo -n 'const char* git_version(void) { const char* GIT_Version = "' > git_version.c
+git rev-parse HEAD | cut -c1-6 | tr -d '\n'  >> git_version.c
+echo '"; return GIT_Version; }' >> git_version.c
+gcc -g  -Wall -I. -I../../p0/include -MMD   -c -o git_version.o git_version.c
+gcc -g  -Wall -I. -I../../p0/include -MMD -o mydash  mydash.o error.o dashutils.o git_version.o -lreadline -lncurses -L../../p0/lib/ -lmylib
+/bin/mv mydash ../
+make[1]: Leaving directory '/home/amit/Documents/CS453-grades/students/ConnorNagel@u.boisestate.edu/backpack/CS453-2-f17/p1/mydash-src'
+[amit@localhost p1(p1_branch)]$ 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	-Linking to provided list library: ok
+	-Functional Requirements:
+		-filename completion and command history (5 points):  ok
+		-normal command execution (10 points): 
+			-only works with ine argment! -6
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+xyz: ls -l -r
+ls: invalid option -- ' '
+Try 'ls --help' for more information.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		-handling empty commands (2 points):    ok
+		-handling EOF (2 points):   ok
+		-handling exit command (2 points):  ok
+		-change directory command (9 points):  
+			-no error message if cd command fails? -2
+		-prompt (5 points):  
+			-no default prompt---that is confusing and not according to spec -2
+        -show version (5 points): 
+			-Please print in hex as git does to make it easier to use! -1
+		-background jobs (5 points): 
+			-No message if background got started or not? -3
+        -job list (10 points): 
+			-working partially -5
+        -simple job control (5 points): 
+			not working -5
+        -jobs command (5 points):  
+			-not possible to test fully -3
+		-other issues: 
+
+Valgrind (20 points):
+	-not possible to test as shell isn't implemented enough -10
+
+Source code control use (10 points):   ok
+
+Design & documentation (25 points):
+	-README file (10 points):  ok
+	-Doxygen docs (5 points): not donw? -5
+	-Code organization & style: 
+		-main function needs to be broken -2
+	-Test plan (10 points):
+		-Needs to be more comprehensive -5
+
+Comments:
+
+Late penalty: -12
+
+Grade:   55/120

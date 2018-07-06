@@ -1,0 +1,27 @@
+Feedback comments for -> ConnorNagel,
+
+Code Quality:
+================
+-> Proper creation of multiple threads in test.c, good.
+-> Multiple threads in test.c properly attempt to execute log_msg(...) concurrently, good.
+-> -3 points, no thread created in ring.c for repeated dump_buffer(...) calls.
+-> -2 points, your use of system signals (SIGARLM) in ring.c introduces a significant bug.
+-> Proper placement of lock/unlock around ring buffer critical sections in ring.c, great!
+
+README:
+================
+-> good job testing execution times.
+ 
+======================
+Grade: 95/100.
+======================
+10/10  No p6 remaining issues.
+10/10  Multiple thread creation in test-threads.c
+30/30  Proper use of threads in test-threads.c
+25/30  Proper use of mutex in ring.c
+10/10  Code Quality.
+10/10  README.md
+======================
+
+Cheers,
+Joey.

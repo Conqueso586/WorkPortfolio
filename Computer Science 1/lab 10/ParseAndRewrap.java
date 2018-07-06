@@ -1,0 +1,70 @@
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+
+public class ParseAndRewrap {
+
+	public static final int ERROR_CODE = 1;
+
+	public static void main(String args[]) {
+		Scanner scan = new Scanner(System.in);
+
+		System.out.println("Enter a filename: ");
+		String filename = scan.nextLine().trim();
+		System.out.println("Please enter the maximum number of characters in a single line: ");
+		int MAX_CHAR = scan.nextInt();
+		File file = new File(filename);
+		String linewrap = "";
+		int smallestLinewrap = MAX_CHAR;
+		int largestLinewrap = 0;
+		try {
+			Scanner fileScan = new Scanner(file);
+
+			while (fileScan.hasNextLine()) {
+
+				String line = fileScan.nextLine();
+
+				Scanner lineScan = new Scanner(line);
+
+				while (lineScan.hasNext()) {
+
+					String token = lineScan.next();
+
+					if (linewrap.length() + token.length() + 1 <= MAX_CHAR) {
+						linewrap = linewrap + token + " ";
+
+					} else if (linewrap.length() + token.length() == MAX_CHAR) {
+						linewrap = linewrap + token;
+					} else {
+						System.out.println(linewrap);
+
+						if (linewrap.length() < smallestLinewrap) {
+							smallestLinewrap = linewrap.length();
+						}
+						if (linewrap.length() > largestLinewrap) {
+							largestLinewrap = linewrap.length();
+						}
+						linewrap = token + " ";
+
+					}
+
+				}
+
+			}
+
+			System.out.println(linewrap);
+			if (linewrap.length() < smallestLinewrap) {
+				smallestLinewrap = linewrap.length();
+			}
+			System.out.println("Largest Line: " + largestLinewrap);
+			System.out.println("Shortest Line: " + smallestLinewrap);
+
+		} catch (FileNotFoundException errorObject) {
+
+			System.out.println("File \"" + filename + "\" could not be opened.");
+			System.out.println(errorObject.getMessage());
+			System.exit(ERROR_CODE);
+		}
+
+	}
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Indexed Unordered List">
+
+  <test name="IUArrayList">   
+  	<parameter name="listType" value="arrayList"/> 
+    <classes>     
+      <class name="Test_ChangeScenario_1"/>
+	  <class name="Test_ChangeScenario_9"/>
+	  <class name="Test_ChangeScenario_38"/>
+	  <class name="Test_ChangeScenario_3"/>
+	  <class name="Test_ChangeScenario_5"/>
+	  <class name="Test_ChangeScenario_8"/>
+	  <class name="Test_ChangeScenario_16"/>
+	  <class name="Test_ChangeScenario_23"/>
+	  <class name="Test_ChangeScenario_25"/>
+	  <class name="Test_ChangeScenario_39"/>
+	  <class name="Test_ChangeScenario_10"/>
+	  <class name="Test_ChangeScenario_12"/>
+	  <class name="Test_ChangeScenario_13"/>
+	  <class name="Test_ChangeScenario_17"/>
+	  <class name="Test_ChangeScenario_2"/>
+	  <class name="Test_ChangeScenario_20"/>
+	  <class name="Test_ChangeScenario_4"/>
+    </classes>
+  </test> <!-- IUArrayList -->
+
+</suite> <!-- Indexed Unordered List -->

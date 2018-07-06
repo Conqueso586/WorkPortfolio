@@ -1,0 +1,27 @@
+import java.util.Scanner;
+import java.io.File;
+public class ParseForCaps {
+	
+	File file = new File(filename);
+	try {
+		Scanner fileScan = new Scanner(file);
+		
+		System.out.println("\nContents of \"" + filename + "\":\n");
+		
+		while (fileScan.hasNextLine()) {
+			
+			String line = fileScan.nextLine();
+			
+	
+			System.out.println(line);
+		}
+		
+		fileScan.close();
+	} catch (FileNotFoundException e) {
+
+		
+		System.out.println("File \"" + filename + "\" could not be opened.");
+		System.out.println(e.getMessage());
+		System.exit(ERROR_CODE);
+	} 
+}}

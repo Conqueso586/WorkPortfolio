@@ -1,0 +1,6 @@
+﻿Set run directory to E:\Programs\Minecraft
+Native Launcher Version: 1365
+Operating System: Windows 10 Pro
+Application Hash: 9010a3b83eb5eaf5e0eb6d367effde64419c2a3f
+Application Data directory: C:\Users\Connor\AppData\Roaming/.minecraft
+Executable Path: MinecraftLauncher.exe

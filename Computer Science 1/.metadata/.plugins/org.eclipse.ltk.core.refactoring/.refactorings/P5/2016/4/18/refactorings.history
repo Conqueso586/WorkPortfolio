@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;songGridButtons&apos; in &apos;MyTunesGUIPanel.MyTunesGUIPanel()&apos; to &apos;musicSquareButtons&apos;&#x0A;- Original project: &apos;P5&apos;&#x0A;- Original element: &apos;MyTunesGUIPanel.MyTunesGUIPanel().songGridButtons&apos;&#x0A;- Renamed element: &apos;songGridButtons&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;songGridButtons&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/&lt;{MyTunesGUIPanel.java[MyTunesGUIPanel~MyTunesGUIPanel@songGridButtons!4117!4178!4129!4143!\[\[QJButton;!0!false" name="musicSquareButtons" references="true" stamp="1461884173028" version="1.0"/>
+</session>

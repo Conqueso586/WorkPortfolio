@@ -1,0 +1,123 @@
+import java.text.DecimalFormat;
+
+
+/**
+ * @author cnagel
+ *
+ */
+/**
+ * @author cnagel
+ *
+ */
+public class Song extends PlayableSong{
+
+DecimalFormat dcim = new DecimalFormat("00");	
+private String title  = "";
+private String artist = "";
+private int playTime = 0;
+private String fileName = "";
+private int seconds = 0;
+private int minutes = 0;
+
+/**
+ * @param title
+ * @param artist
+ * @param playTime
+ * @param fileName
+ */
+public Song(String title, String artist, int playTime, String fileName){
+	super(fileName);
+	this.title = title;
+	this.artist = artist;
+	this.playTime = playTime;
+	this.fileName = fileName;
+
+}
+
+/**
+ * @param title
+ * @param artist
+ */
+
+
+/**
+ * @param set title of current song
+ */
+public void setTitle(String title){
+	this.title = title;
+
+}
+/**
+ * @return title of current song
+ */
+public String getTitle(){
+	return title;
+}
+/**
+ * @param sets artist name
+ */
+public void setArtist(String artist){
+	this.artist = artist;
+}
+/**
+ * @return artist name
+ */
+public String getArtist(){
+	return artist;
+}
+/**
+ * @param sets playtime of current song
+ */
+public void setPlayTime(int playTime){
+	this.playTime = playTime;
+}
+/**
+ * @return playtime of current song
+ */
+public int getPlayTime(){ 		
+	return playTime;
+
+}
+/**
+ * @return minutes in current song
+ */
+public int minutes(){
+	minutes = playTime / 60;
+	return minutes;
+	
+}
+/**
+ * @return seconds in current song
+ */
+public int seconds(){
+	seconds = playTime - (minutes *60);
+	return seconds;
+}
+/**
+ * @param sets filename.
+ */
+public void setFileName(String fileName){
+	this.fileName = fileName;
+}
+/**
+ * @return filename of the current song
+ */
+public String getFileName(){
+	return fileName;
+	}
+
+
+
+
+
+
+public String toString(){
+	StringBuilder sb = new StringBuilder();
+	
+	sb.append(getTitle() + "\t \t" + getArtist() + "\t \t" + dcim.format(minutes())+ ":" +dcim.format(seconds()) + "\t \t" + getFileName());
+	return sb.toString();
+
+}
+
+
+}

@@ -1,0 +1,35 @@
+Testing: 
+	-Submission quality: 
+	-Build/Makefile:  
+	-Compiling:  
+	-Linking to provided list library:
+	-Functional Requirements:
+		-filename completion and command history (5 points): 
+		-normal command execution (10 points): 
+		-handling empty commands (2 points):   
+		-handling EOF (2 points):  
+		-handling exit command (2 points): 
+		-change directory command (9 points):  
+		-prompt (5 points):  
+        -show version (5 points): 
+		-background jobs (5 points): 
+        -job list (10 points): 
+        -simple job control (5 points): 
+        -jobs command (5 points):  
+		-other issues: 
+
+Valgrind (20 points):
+
+Source code control use (10 points):  
+
+Design & documentation (25 points):
+	-README file (10 points): 
+	-Doxygen docs (5 points):
+	-Code organization & style: 
+	-Test plan (10 points):  
+
+Comments:
+
+Late penalty:
+
+Grade:   /120

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="List Testing 2">
+  <test name="Good List"> 
+  	<parameter name="listType" value="goodList"/>   
+    <classes>     
+      <class name="Test_ChangeScenario_1"/>
+	  <class name="Test_ChangeScenario_9"/>
+	  <class name="Test_ChangeScenario_38"/>
+	  <class name="Test_ChangeScenario_2"/>
+	  <class name="Test_ChangeScenario_4"/>
+	  <class name="Test_ChangeScenario_10"/>
+	  <class name="Test_ChangeScenario_12"/>
+	  <class name="Test_ChangeScenario_13"/>
+	  <class name="Test_ChangeScenario_17"/>
+	  <class name="Test_ChangeScenario_20"/>
+	  
+    </classes>
+  </test> <!-- Good List-->
+
+  <test name="Bad List">   
+  	<parameter name="listType" value="badList"/> 
+    <classes>     
+      <class name="Test_ChangeScenario_1"/>
+	  <class name="Test_ChangeScenario_9"/>
+	  <class name="Test_ChangeScenario_38"/>
+	  <class name="Test_ChangeScenario_2"/>
+	  <class name="Test_ChangeScenario_4"/>
+	  <class name="Test_ChangeScenario_10"/>
+	  <class name="Test_ChangeScenario_12"/>
+	  <class name="Test_ChangeScenario_13"/>
+	  <class name="Test_ChangeScenario_17"/>
+	  <class name="Test_ChangeScenario_20"/>
+    </classes>
+  </test> <!-- Bad List-->
+
+</suite> <!-- List Testing 2 -->

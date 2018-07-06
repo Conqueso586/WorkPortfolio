@@ -1,0 +1,17 @@
+# Project 5: MyTunes
+
+* Author: Connor Nagel
+* Class: CS121 Section 1
+* Semester: Spring 2016
+
+##Overview
+
+The program creates a GUI interface that loads a playlist and allows the user to play and manipulate the songs on the list. A song grid is displayed that shows the number of times each song is played and changes the color accordingly. 
+
+##Compiling and Using
+Using terminal enter the following commands while within the project directory:
+javac MyTunesGUI.java
+java MyTunesGUI
+
+##Discussion
+This project was by far the most difficult work I have done in this class. I spent some 15-20 hours working out all of the methods and bugs. Most of my errors were null pointer exceptions, which were easier to fix than other errors, but the frequency of which they occured was frustrating. I received help from numerous students, tutors and faculty to get this project done, and I'm still certain that the program is full of bugs and weird logic errors. Regardless of my frustrations I can tell that I am much more comfortable working with GUI code and understanding listener logic.

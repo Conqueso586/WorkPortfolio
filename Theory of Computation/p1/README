@@ -1,0 +1,24 @@
+Project p1p1: DFA
+
+Author: Connor Nagel
+Class: CS361 Section 1
+Semester: Spring 2017
+
+##Overview
+
+This program takes in a formatted txt file to generate a DFA. It prints the information to sys.out.
+
+##Compiling and Using
+
+javac fa.dfa.DFADriver.java
+java fa.dfa.DFADriver <filePath>
+
+Possible issue: The class might have issue with a fresh FAInterface.java, I made some changes to my FAInterface. Discussed below.
+
+##Discussion
+
+For the most part this project went by pretty well. I had very few issues getting the program to do what I wanted. However, I had trouble figuring out how to adhere to the FAInterface and still use a extended DFAState class. I decided to change some of the return types in the interface to make it work. I'm sure there is a way to do it without resorting to that, please let me know what it is so I can fix my code writing for the future.
+
+##Testing
+
+I tested this program with the provided .txt files and the eclipse debugger. If I couldn't determine the issue from those resources I would sysout certain variables to see if they were holding the correct values.

@@ -1,0 +1,20 @@
+# Project 1: Modern Art
+
+*Author: Connor Nagel
+*Class: CS121 Section 1
+*Semester: Spring 2016
+
+## Overview
+
+   The program mimics the art style of Piet Mondrian by using println statements to draw them.
+
+## Compiling and Using
+
+    cd into the directory that contains the project
+    Compile the program using javac ModernArt.java.
+    Run the program using java ModernArt
+    
+## Discussion
+
+
+   This program wasn't particulary difficult to create. The only issue I came across was the syntax of public static void main(String() args){}. Once I fixed that, the rest of the project came pretty quickly.

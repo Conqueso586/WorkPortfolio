@@ -1,0 +1,19 @@
+package lab06;
+import java.util.Scanner;
+import java.lang.String;
+
+
+public class ReverseString {
+	
+	public static void main(String[] args){
+Scanner scan = new Scanner(System.in);
+
+
+System.out.println("Enter a string: ");
+ String string = scan.nextLine().trim();
+
+ for(int i = string.length(); i <= 0; i--){
+	 	System.out.println(string.charAt(i));
+ };
+	}
+}

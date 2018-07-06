@@ -1,0 +1,62 @@
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+
+public class ParseAndRewrap {
+
+	public static final int ERROR_CODE = 1;
+	public static final int MAX_CHAR = 40;
+
+	public static void main(String args[]) {
+		Scanner scan = new Scanner(System.in);
+
+		System.out.println("Enter a filename: ");
+		String filename = scan.nextLine().trim();
+
+		File file = new File(filename);
+		String linewrap = "";
+		int smallestLinewrap = 40;
+		int largestLinewrap = 0;
+		try {
+			Scanner fileScan = new Scanner(file);
+
+			while (fileScan.hasNextLine()) {
+
+				String line = fileScan.nextLine();
+
+				Scanner lineScan = new Scanner(line);
+
+				while (lineScan.hasNext()) {
+
+					String token = lineScan.next();
+
+					if (linewrap.length() + token.length() + 1 <= MAX_CHAR) {
+						linewrap = linewrap + token + " ";
+
+					} else {
+						System.out.println(linewrap);
+
+						if (linewrap.length() < smallestLinewrap) {
+							smallestLinewrap = linewrap.length();
+						}
+						if (linewrap.length() > largestLinewrap) {
+							largestLinewrap = linewrap.length();
+						}
+						linewrap = token + " ";
+
+					}
+
+				}
+
+			}
+			System.out.println("Shortest Line: " + smallestLinewrap);
+			System.out.println("Largest Line: " + largestLinewrap);
+		} catch (FileNotFoundException errorObject) {
+
+			System.out.println("File \"" + filename + "\" could not be opened.");
+			System.out.println(errorObject.getMessage());
+			System.exit(ERROR_CODE);
+		}
+
+	}
+}

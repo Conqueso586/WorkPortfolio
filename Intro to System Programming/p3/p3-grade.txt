@@ -1,0 +1,61 @@
+Feedback comments for -> ConnorNagel,
+
+Grading Scripts:
+================
+-> -5 points, Failed to build. To resolve this issue please come see me during tutoring hours.
+-> (*issue resolved, student had previously pushed faulty backpack.sh & Makefile files*)
+
+Code Quality:
+================
+-> Adequate tests within UnitTestList.c
+-> GREAT use of List.c function invocations from within other List.c function definitions. This is a good programming practice that increases overall code reliability.
+-> (i.e. Say remove()'s definition invokes removeFront(), removeRear(), and getSize(). If we thoroughly test remove() we have indirectly tested those other functions, thus increasing overall reliability.)
+-> -1 points, Inconsistent code formatting decreases readability & maintainability. Avoid this bad programming practice.
+your code -> Inconsistent boolean expression format.
+void printList(const struct list *list)
+{
+    if (!list) return;
+...
+void reverseList(struct list *list)
+{
+    if (list == NULL) return;
+...
+-> Good variable names. Continue this good programming practice.
+-> -2 points, There is a bug in your following functions that do NOT protect against dereferencing NULL function arguments:
+-> getSize()
+-> isEmpty()
+-> freeList()
+
+README:
+================
+-> Good README. Follow the same format for future projects.
+
+NOTES TO STUDENT:
+================
+One of the purposes of your UnitTester.c was for you to incrementally test your List.c functions (i.e. after writing one function, thoroughly test it before moving on). This gives you a reasonable level of assurance that the locality of a possible fail is based on the most current code. This is a good (although slow) programming practice that can save debug time, and speed up the isolation of bugs.
+
+Minor clarification: dangling pointers are pointers that have had their memory deallocated, but the pointer itself (an address) is still a valid reference to that original memory location that was allocated for the pointer. This is dangerous and should be carefully avoided when developing C code.
+
+Keep this in mind for next project: struct memory that is malloc'ed from the heap dynamically during run-time can be accessed by dereferencing the pointer using the following syntax, "list->size". struct memory that is created statically during compilation, say as a global variable, can be accessed by dereferencing the pointer using the following syntax, "list.size".
+
+
+======================
+Grade: 93/100.
+======================
+45/50   Grading-Scripts.
+-5     failed...
+37/40  Code-Quality.
+-1     code formatting
+-0     code comments/doc
+-0     code modularity
+-2     code semantics
+10/10  README.md-File.
+-0     used template
+-0     grammar/spelling
+-0     correct statements
+-0     sources
+0      Late-Penalty.
+======================
+
+Cheers,
+Joey.

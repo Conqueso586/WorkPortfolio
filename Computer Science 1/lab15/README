@@ -1,0 +1,7 @@
+Connor Nagel
+
+Bug1: Used the debugger to step over the for loop in order to see when the program runs into the outofbounds exception. The loop reached 10 which is one more than the size of the array. So I changed "i <= fleet.length" to "i < fleet.length".
+
+Bug2: I stepped over the program until it stopped prematurely at the while -loop. There was a semi-colon before the body that skipped over the contents of the while-loop.
+
+Bug3: I stepped into the car.nextMove method in order to check the method body. I found that stepping through the method showed that the code would only run through one of the if statements. Instead of decrementing the x value to go east, the code incremented the x value. Resulting in the car never reaching its destination.

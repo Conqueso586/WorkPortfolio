@@ -1,0 +1,11 @@
+Connor Nagel CS 121-L 001
+
+
+Removed semi-colons from the HelloWorld.java file. Created an error when compiling.
+
+Added a println statement that reads "Put that cookie DOWN!" and then starts a new line.
+
+Changed HelloWorld to helloworld, changed main to Main, removed a semi-colon. When compiled the program crashed. So all the changes must be recalled.
+
+Created a new file called Quote.java, added in 3 quotes from Arnold Schwarzenegger.
+added comments to the Quote file.

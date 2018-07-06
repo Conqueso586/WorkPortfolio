@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Indexed Unordered List">
+
+  <test name="IUSingleList">   
+  	<parameter name="listType" value="singleLinkedList"/> 
+    <classes>    
+    
+      <class name="Test_ChangeScenario_1"/>
+	  <class name="ItrTest_ChangeScenario_1"/>
+	  <class name="Test_ChangeScenario_9"/>
+	  <class name="ItrTest_ChangeScenario_9"/>
+	  <class name="Test_ChangeScenario_38"/>
+	  <class name="ItrTest_ChangeScenario_38"/>
+	  <class name="ItrTest_ChangeScenario_12"/> 
+	  <class name="ItrTest_ChangeScenario_13"/>
+	
+	  <class name="ItrTest_ChangeScenario_16"/>
+	  <class name="ItrTest_ChangeScenario_17"/>
+	  <class name="ItrTest_ChangeScenario_2"/>
+	  <class name="ItrTest_ChangeScenario_20"/>
+	  <class name="ItrTest_ChangeScenario_23"/>
+	  <class name="ItrTest_ChangeScenario_25"/>
+	  <class name="ItrTest_ChangeScenario_3"/>
+	  <class name="ItrTest_ChangeScenario_39"/>
+	  <class name="ItrTest_ChangeScenario_4"/>
+	  <class name="ItrTest_ChangeScenario_5"/>
+	  <class name="ItrTest_ChangeScenario_8"/>
+	  <class name="ItrTest_ChangeScenario_10"/>
+	  <class name="ItrTest_ChangeScenario_6"/>
+	  <class name="ItrTest_ChangeScenario_7"/>
+	  <class name="ItrTest_ChangeScenario_11"/>
+	  <class name="ItrTest_ChangeScenario_18"/>
+	  <class name="ItrTest_ChangeScenario_19"/>
+      <class name="ItrTest_ChangeScenario_24"/>
+      <class name="ItrTest_ChangeScenario_35"/>
+	
+	
+	  <class name="Test_ChangeScenario_3"/>
+	  <class name="Test_ChangeScenario_5"/>
+	  <class name="Test_ChangeScenario_8"/>
+	  <class name="Test_ChangeScenario_16"/>
+	  <class name="Test_ChangeScenario_23"/>
+	  <class name="Test_ChangeScenario_25"/>
+	  <class name="Test_ChangeScenario_39"/>
+	  <class name="Test_ChangeScenario_10"/>
+	  <class name="Test_ChangeScenario_6"/>
+	  <class name="Test_ChangeScenario_7"/>
+	  <class name="Test_ChangeScenario_18"/>
+	  <class name="Test_ChangeScenario_19"/>
+	  <class name="Test_ChangeScenario_24"/>
+	  <class name="Test_ChangeScenario_35"/> 
+	  <class name="Test_ChangeScenario_12"/>
+	  <class name="Test_ChangeScenario_13"/>
+	  <class name="Test_ChangeScenario_17"/>
+	  <class name="Test_ChangeScenario_2"/>
+	  <class name="Test_ChangeScenario_20"/>
+	  <class name="Test_ChangeScenario_4"/>
+	  <class name="Test_ChangeScenario_11"/>
+	  
+	
+    </classes>
+  </test> <!-- IUSingleLinkedList -->
+
+</suite>
+<!-- Indexed Unordered List -->

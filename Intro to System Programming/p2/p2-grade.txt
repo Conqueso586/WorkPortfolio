@@ -1,0 +1,80 @@
+Feedback comments for -> ConnorNagel,
+
+Grading Scripts:
+================
+-> -5 points, HW2: FAIL - valgrind
+
+Code Quality:
+================
+-> -3 points. No use of functions as project objectives state.
+-> -3 points. No use enums as project objectives state.
+-> Good code formatting.
+-> Good comments.
+-> -3 points. Issue with getline() function use.
+  man getline(&line,...) says to set line to NULL before passing as an argument.
+
+README:
+================
+-> Good README. Follow the same format for future projects.
+-> "the command line manual to figure that out." ... good, definitely a resource you'll have to use a lot :)!
+
+NOTES TO STUDENT:
+================
+-> Before dereferencing a pointer either by *p, or p[x], it is good practice to first verify the pointer is NOT null... especially with pointers that are dynamic and will be assigned their data during run-time based on user/system input.
+
+-> Avoid magic numbers floating around in your code at ALL costs. Its a BAD programming practice and is guaranteed to slow down those reading your code. Don't make assumptions other readers know what you are doing.
+-> For instance: 
+  for( int i=sizeof(x)*8-1; i>=0; i-- ){...}
+-> A better solution:
+  #define BYTE_SIZE 8
+  for( int i=sizeof(x)*BYTE_SIZE-1; i>=0; i-- ){...}
+
+-> Global variables are typically unsafe and a bad programming practice. Go through other possible design decisions before making this one. Passing the variable amongst functions is generally speaking the best solution in this instance. For example (with very long comments):
+  void f1(int *);
+  int main(void){
+    int flag = LOW;
+    f1(&flag); // passing the "address" of the variable "flag" so that the scope of "flag" can be extended to f1() block.
+    print("%d\n", flag);
+    return 0;
+  }
+  void f1(int *in){
+    if( *in == LOW ){ // dereferencing a pointer that is a copy of the pointer to "flag"
+      *in = HIGH; // if flag's integer was LOW set the integer the "flag" variables points to, to HIGH.
+    }
+  }
+
+-> Hopefully this brings some awareness to some of the good programming practices related to functions when writing code.
+-> The use of functions are incredibly important to developing "good code".
+-> With well named functions, code readability an be increased.
+-> Functions reduce the block size of code, increasing readability, making your code more linear, logical, and easier to read.
+-> BE CAREFUL - Overuse of functions can cause code readability to decrease by causing a reader to jump/scatter to various parts of source code, making it harder to follow logic and the sequential execution of operations. Avoid this bad programming practice.
+-> One advantage for using functions is that they allow for code reuse. This can increase your speed and throughput while writing code.
+-> When functions encapsulate like-functionality within your code they allow for increased flexibility and future extendibility of your code. This is especially true for complex like-functionality code (i.e an algorithm, or input parser), or highly specific like-functionality code (i.e. printing, formatting).
+  For example, say you are developing an app and decide to encapsulate your code used for sorting something. If a new algorithm comes out that is much more efficient, faster, or elegant, you only have to change one line where that function was invoked & insert a function call to the "new/better" function that can be appended to the current code base, or linked in from a separate C file or library.
+-> Functions increase file cohesion which can increase reliability of properly working code.
+  For example, say f1() calls f2(). While testing, if f1() passes, then indirectly we have shown that f2() passes as well. This means our code is more reliable when creating these types of same-file function dependencies.
+-> BE CAREFUL - grouping non-like-functionality code together often decreases extendibility, flexibility, and readability of code. Avoid this bad programming practice.
+
+
+======================
+Grade: 76/100.
+======================
+45/50  Grading-Scripts.
+-5     failed...
+31/40  Code-Quality.
+-3     code formatting
+-0     code comments/doc
+-3     code modularity
+-3     code semantics
+10/10  README.md-File.
+-0     used template
+-0     grammar/spelling
+-0     correct statements
+-0     sources
+
+10     Late Penalty.
+-      last push 9/16.
+======================
+
+Cheers,
+Joey.

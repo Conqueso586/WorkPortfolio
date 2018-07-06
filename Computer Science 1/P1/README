@@ -1,0 +1,23 @@
+#Project 1: Traffic Animation
+
+*Author: Connor Nagel
+*Class: CS121 Section 1
+*Semester:Spring 2016
+
+## Overview
+
+The program is meant to use graphics methods to create an animation of a road crossing.
+
+## Compiling and Using
+
+cd - use to change into the directory the file is contained in.
+ls - use to bring up files in current directory.
+
+Once you are in the correct directory. Use these commands to run the program.
+
+javac TrafficAnimation.java - To compile the java file for use.
+java TrafficAnimation - This runs the java code that you've compiled.
+
+## Discussion
+
+Most of the diffculty I had with this project was trying to position every detail of the avatar and truck in the right spot. I had to do a lot of guess and check to get it close to right. The most common error I dealt with had to do with inputting the correct values into the fill.oval and draw.Arc functions. I tried to use doubles to make my values more accurate, but the graphics methods that I was using wouldn't take double values, so I had to change them back.

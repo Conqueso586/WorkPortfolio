@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class ParseAndRewrap {
+	public static void main (String args[]){
+		Scanner scan = new Scanner(System.in);	
+		Scanner scn = new Scanner(System.in);
+		
+		
+		System.out.println("Enter a filename: ");
+		String filename = scan.nextLine().trim();
+		scan.hasNextLine();
+		scan.nextLine();
+		
+		scn.hasNext();
+		scn.next();
+		
+	}
+	
+	
+	
+	
+}

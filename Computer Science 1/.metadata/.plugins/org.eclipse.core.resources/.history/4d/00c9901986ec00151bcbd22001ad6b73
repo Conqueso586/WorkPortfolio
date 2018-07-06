@@ -1,0 +1,12 @@
+import java.util.Scanner;
+public class ParseAndRewrap {
+	public static void (String args[]){
+		Scanner scan = new Scanner(System.in);	
+		
+		
+	}
+	
+	
+	
+	
+}

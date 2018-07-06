@@ -1,0 +1,67 @@
+****************
+* Project 3 DLL
+* CS221-1
+* 6/19/2016
+* Connor Nagel
+**************** 
+
+OVERVIEW:
+
+This program creates Nodes that are used to construct a DLL list. It also has an inner class ListIterator that can be used to manipulate the DLL list.
+
+INCLUDED FILES:
+
+* IUDoubleLinkedList.java
+* TestCase.java (updated) - new updated TestCase class that includes IUDoubleLinkedLists
+* DLLNode.java - Node class used in the IUDoubleLinkedList.
+* iudoublelinkedlist.xml (updated) - the .xml file used to conduct multiple tests at once
+* README - this file
+
+
+COMPILING AND RUNNING:
+
+
+ From the directory containing all the necessary files, compile the
+ driver class with the command:
+ $ javac IUDoubleLinkedList.java
+
+ Run the compiled class file with the command:
+ $ java org.testng.TestNG iudoublelinkedlist.xml
+
+
+
+PROGRAM DESIGN AND IMPORTANT CONCEPTS:
+
+This program is driven from the iudoublelinkedlist.xml file. Each change scenario listed in the .xml is tested using the TestNg suite. Each method of the IUDoubleLinkedList.java class is tested inorder to make sure that each method manipulates the DLLlist in a way that does not break the list. Each DLLNode has next, prev and element variables. next and prev point to the next prev Node in the list. All the nodes in the list must be linked to another node unless it is the only node in the list.
+
+Inside the IUDoubleLinkedList is an private inner class called ListIterator that allows the user to move through the double linked list and manipulate the contents by removing nodes, setting elements of nodes, finding the nodes index, etc. 
+
+The Test class files use Double linked lists and ListIterator objects in order to test their functionality.
+
+Each test is named after what it is testing: Test_ChangeScenario_X, ItrTest_ChangeScenario_X, ListItrTest_ChangeScenario_X
+
+Test_ - if the class is testing the methods of the IUDoubleLinkedList
+
+ItrTest_ - if the class is testing the remove, hasNext, and next methods of the ListIterator
+
+ListItrTest_ - if the class is testing the remaining methods required by the ListIterator interface
+
+
+TESTING:
+
+Each method of the IUDoubleLinkedList is tested against 21 different scenarios in which the Double linked list is changed in some way. Every method's result is compared against the expected return value of each change scenario. If the method is supposed to return an exception this is accounted for when the test is initialized. There is still a bug where the testiterator method returns a TestException and I couldn't figure out why it was giving me that result.
+
+
+
+DISCUSSION:
+ 
+When working on this project initially I was hesistant to draw out the list and the states of the iterator in order to wrap my head around it. But when I found myself frustrated by the mental gymnastics I decided to draw out each scenario so I could keep the logic straight within the methods. There were many times where the tests yielded null pointer exceptions. Some of the methods that weren't working I decided to scrap them entirely and rework them using the drawings. I had to lookup the listiterator class online in order to really understand how a few of the functions worked. Once I understood the method's interface specifics I could implement the method on my own.
+
+The creation of the list iterator test went really quickly this time. After practicing with the iterator tests from the last homework assignment I was able to understand how each test worked in the context of the change scenario.
+
+ 
+ 
+
+
+----------------------------------------------------------------------------
+

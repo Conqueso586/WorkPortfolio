@@ -1,0 +1,9 @@
+[TestNG] Running:
+  /home/students/cnagel/workspace/testNG/testng.xml
+
+
+===============================================
+Suite1
+Total tests run: 1, Failures: 0, Skips: 0
+===============================================
+

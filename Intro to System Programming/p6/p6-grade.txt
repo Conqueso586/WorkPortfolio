@@ -1,0 +1,45 @@
+Feedback comments for -> ConnorNagel,
+
+Grading Scripts:
+================
+-> -2 points, Did not create the correct number of entries in the log file.
+-> this is because your loop in dump_buff() is wrong. (as well as other things...)
+
+Code Quality:
+================
+-> Valid test case for NULL log.
+-> Correct buff.curr integer overflow protection within ring.c
+-> Correct placement of sig_handler initialization.
+-> Correct placement of first alarm invocation.
+-> Correct placement of repeated alarm invocation.
+-> -1 point, Bug exists - no check for fopen() success before writing to log_file.
+-> the stdio.h function fopen(fileName, mode) will return NULL if failing to open file, not checking return pointer for NULL before using it poses a possible fail.
+-> -1 point, Bug exists - open file pointer is closed statically as a global invocation??? This should be in a function call.
+
+README:
+================
+-> -1 points, Lacking a discussion(or testing) of scenario where log() is interrupted by SIGALRM -> sig_handler.
+-> As for your comment about the scenario where the integer 'buff.curr' overflows; yes, buff.curr % MAX-LOG-ENTRY prevents overflow, you were suppose to recognize this.
+
+
+======================
+Grade: 75/100.
+======================
+48/50  Grading-Scripts.
+-2     failed...
+38/40  Code-Quality.
+-0     code formatting
+-0     code comments/doc
+-0     code modularity
+-2     code semantics
+9/10   README.md-File.
+-0     used template
+-0     grammar/spelling
+-1     correct statements
+-0     sources
+20     Late Penalty.
+-      last push 12/3.
+======================
+
+Cheers,
+Joey.

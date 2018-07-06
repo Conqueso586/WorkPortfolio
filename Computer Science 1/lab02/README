@@ -1,0 +1,31 @@
+Connor Nagel Computer Science Lab 001 CS 121-L -001
+
+ConvertToSeconds.java - Converts the total hours, minutes and seconds to a single number of seconds
+ConvertToHours.java - Converts the amount of seconds and then outputs that amount in hours with remaining minutes and seconds.
+README
+
+COMPILING AND RUNNING:
+
+
+javac - Command for compiling the program, will only work if you are in the directory in which the file resides. javac file_name.java targets the desired file.  
+
+java - Command for running the program. java file_name (it is important that the "file_name" does not have its file type after it when trying to run the program.)
+
+cd - change directory
+ls - list directory contents
+mkdir - creates a directory at the current location
+rmdir - removes the current directory
+kwrite - opens kwrite, kwrite file_name.java will open the file with kwrite 
+
+PROGRAM DESIGN AND IMPORTANT CONCEPTS:
+For the ConvertToSeconds program I merely converted the hours and minutes individually and then I added up the converted amounts and printed out the result. This result represents the total number of seconds.
+
+For the ConvertToHours program I divided the number of seconds by 3600 to convert to hours. To get the minutes and seconds I had to use the % sign to find the remaining seconds that needed to be converted. I then displayed them all seperatly. 
+
+TESTING: I tested it using the given numbers in the procedure and then compared them. I admit this isn't fool proof as i don't know for sure whether or not there are any values that would cause a problem in the program. If a word is entered, the program stops and doesn't return a value.
+
+DISCUSSION:
+I had issues with kwrite, it kept stopping and freezing when I tried to open it. I got around this by using gedit, a similar program that allowed me to finish the assignment without restarting the computer.
+
+The ConvertToHours program was definitly the most difficult part of the lab. I had to think about what I've learned thus far to determine how I would solve the problem.
+

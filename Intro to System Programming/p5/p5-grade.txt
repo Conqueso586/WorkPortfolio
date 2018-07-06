@@ -1,0 +1,43 @@
+Feedback comments for -> ConnorNagel,
+
+Grading Scripts:
+================
+-> -5 points, Failed to build LinkedList files.
+
+Code Quality:
+================
+-> Correctly creating required directories.
+-> Correctly building application.
+-> Correct loop conditions from smallest to largest file size.
+-> Correctly executing both options of application.
+-> Correct file diff validation.
+-> +10 points, Correctly finding execution times.
+
+README:
+================
+-> Good README. Follow the same format for future projects.
+-> "I remembered that `...` would allow me to use other commands within commands.", good job - another common way is to save the output with say result=$(<some_command>), then to use result inside other commands :)
+
+
+======================
+Grade: 95/100.
+======================
+45/50  Grading-Scripts.
+-5     failed...
+40/40  Code-Quality.
+-0     code formatting
+-0     code comments/doc
+-0     code modularity
+-0     code semantics
+10/10  README.md-File.
+-0     used template
+-0     grammar/spelling
+-0     correct statements
+-0     sources
+10     Late Penalty.
+-      last push 11/11.
+10     Extra Credit.
+======================
+
+Cheers,
+Joey.

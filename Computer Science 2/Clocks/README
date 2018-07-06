@@ -1,0 +1,50 @@
+******************
+* Project 2 Clocks
+* CS221
+* 05/27/16
+* Connor Nagel
+******************
+
+OVERVIEW:
+    This program implements polymorphism to use methods of the parent class Clock in order to find the total drift time of each type of clock.
+    
+INCLUDED FILES:
+
+    TimePiece.java - The interface for the Clock class
+    Clock.java - the abstract class used to derive the sub-classes
+    Sundial.java - represents a sundial clock
+    CuckooClock.java - represents a CuckooClock
+    GrandfatherClock.java - represents a GrandfatherClock
+    AtomicClock.java - represents a AtomicClock
+    WristWatch.java - represents a WristWatch
+    ClockSimulation.java - Simulates the passage of time using each sub-class of clock defines
+    README - this file 
+    
+COMPILING AND RUNNING:
+
+From the directory that contains all source files needed, compile the driver class:
+$ javac ClockSimulation.java
+
+Run the driver class with:
+$ java ClockSimulation
+
+The console will then display all the information about each clock
+
+PROGRAM DESIGN AND IMPORTANT CONCEPTS:
+
+    The main concept of this program is ploymorphism. The abstract class Clock builds the basic functions of a clock, then multiple sub-classes that extend Clock are created in order to provide data from each type of clock. 
+    
+    The ClockSimulation class is the driver class in this program. It uses the Clock's Time object to count how many seconds pass in a given length of time and then determines how much drift the clock accumulated over the time interval.
+    
+    
+TESTING:
+
+    There wasn't a ton of testing that I had to do. There only problem that needed testing was figuring out how to format the display method of each sub-class properly. This took a little bit of trial and error to determine what I had to change to fix it.
+    
+DISCUSSION:
+
+I had trouble understanding exactly how the bag class fits in with the project. When I first started I couldn't find the use for it. I realized its purpose after I went to try to use the tick method to increment the time variable. Since each clock needed to be incremented I used for loops to loop to each clock and increment the time individualy. 
+
+All other errors came from trying to work out the format for the displays.
+
+I found this project to be good practice of polymorphism, I feel like I understand the relationships between classes and interfaces so much better than I did.

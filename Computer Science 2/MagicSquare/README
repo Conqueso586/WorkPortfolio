@@ -1,0 +1,42 @@
+****************
+* Project #1
+* CS221
+* 5/22/2016
+* Connor Nagel
+****************
+
+OVERVIEW:
+    The MagicSquare program allows the user to check or create a file that has the properties of a MagicSquare.
+
+INCLUDED FILES:
+    MagicSquare.java - driver class
+    MagicSquareUtilities.java - class with all the usable methods
+    README - this file
+
+COMPILING AND RUNNING:
+
+Change to the directory that contains all of the source files for the program.
+Compile the program using the command:
+$ javac MagicSquare.java.
+
+To run the program use the folling format for the command: 
+$ java MagicSquare [-check | -create] [|size]
+
+The size argument is only needed for the -create mode of the program.
+
+PROGRAM DESIGN AND IMPORTANT CONCEPTS:
+The MagicSquare class is the driver class for the program. It takes in the arguments given from the command line and determines which method was called. 
+
+The MagicSquareUtilities class is the class that the MagicSquare class uses to analize and write files. All methods are contained in MagicSquareUtilities.
+
+If the -check method is selected, then the program takes the file name given and reads through it in order to determine whether or not it qualifies as a magic square. Once it has finished the array check, then the results are printed to the console.
+
+If the -create method is selected, then the program will use the size argument to generate a new magic square. Once the magic square is generated then a write method is called to write the new magic square to the given file.
+
+TESTING:
+
+For the most part testing was done by placing print statements throughout the code to see how everything was being assigned. Towards the end of working on the project I starting using the eclipse debugger because it allowed me to find problems in my for and while loops.
+
+DISCUSSION:
+
+For the longest time I couldn't figure out how to get the driver class to take the arguments from the command line and determine which method I wanted to call. It turned out to be a simple implementation, but it did cost me a lot of time trying to look it up. Most of my testing involved testing the various loops that check for the magic square requirements. The logic for catching the correct exceptions was difficult to work out.

@@ -1,0 +1,20 @@
+
+Name: ConnorNagel@u.boisestate.edu
+
+
+Grade: 14/20
+
+Proper project layout and makefiles:  ok
+
+Features:
+
+1. (2 points) Filename completion and history:  ok
+2. (2 points) Normal command execution:  ok
+3. (2 points) Handling empty commands:  ok
+4. (2 points) Handling EOF:  ok
+5. (2 points) Exit command:  ok
+6. (2 points) Change Directory command:  ok
+7. (4 points) Create an empty list and link to provided list library: List not used? -2
+8. (4 points) Screenshot of project plan on Trello (named pm.png): Not submitted? -4
+
+Comments:

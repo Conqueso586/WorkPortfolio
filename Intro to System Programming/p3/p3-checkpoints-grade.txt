@@ -1,0 +1,126 @@
+p3 checkpoint 1
+===============
+
+Development:
+ -getSize: (-2) not implemented.
+ -isEmpty: 
+ -addAtRear: (-2) not implemented.
+ -reverseList:i (-2) not implemented.
+
+Unit Tests: (-4) not implemented.
+
+grade: 0/10
+
+p3 checkpoint 2
+===============
+
+Development:
+ -removeFront:
+ -removeRear:
+ -removeNode:
+ -freeList: 
+
+Unit Tests:
+
+Valgrind:
+	-memory errors:
+	-memory leaks:
+
+grade: 0/10 Doesn't build. Need to fix this and see me if you want any points.
+
+
+
+------------------------------------------
+Checkpoint 1 grader results
+=================================
+ConnorNagel@u.boisestate.edu
+===============================
+===============================
+addAtFrontWithNoNodes - Running...
+[PASSED] - addAtFrontWithNoNodes
+
+addAtFrontWithOneNode - Running...
+addAtFrontWithOneNode - (not implemented)
+[FAILED] - addAtFrontWithOneNode
+
+addAtRearWithNoNodes - Running...
+addAtRearWithNoNodes - (not implemented)
+[FAILED] - addAtRearWithNoNodes
+
+addAtRearWithOneNode - Running...
+addAtRearWithOneNode - (not implemented)
+[FAILED] - addAtRearWithOneNode
+
+removeFromListWithOneNode - Running...
+removeFromListWithOneNode - (not implemented)
+[FAILED] - removeFromListWithOneNode
+
+nullNodeTest - Running...
+nullNodeTest - (not implemented)
+[FAILED] - nullNodeTest
+
+Test Cases: 6
+Passed: 1
+Failed: 5
+===============================
+Running tests for checkpoint 1...
+
+----->ERROR: addAtRear did not actually add the correct node to Rear
+----->ERROR: addAtRear did not actually add the correct node to Rear
+----->ERROR: addAtRear did not actually add the correct node to Rear
+----->ERROR: addAtRear did not actually add the correct node to Rear
+----->ERROR: addAtRear did not actually add the correct node to Rear
+Total tests: 564
+Passed: 559
+----------------------------------------
+Checkpoint 2 grader results
+===============================
+cp: cannot create regular file ‘../lib/libmylib.so’: No such file or directory
+make[1]: *** [install] Error 1
+make: *** [library] Error 2
+===============================
+./deploy-new-grader.sh: line 19: ./testsuite/UnitTestList: No such file or directory
+===============================
+==89054== Memcheck, a memory error detector
+==89054== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==89054== Using Valgrind-3.9.0 and LibVEX; rerun with -h for copyright info
+==89054== Command: ./grader -c 2
+==89054== 
+./grader: error while loading shared libraries: libmylib.so: cannot open shared object file: No such file or directory
+==89054== Jump to the invalid address stated on the next line
+==89054==    at 0x5A6: ???
+==89054==    by 0x34C9C0F049: _dl_signal_error (dl-error.c:121)
+==89054==    by 0x34C9C0DC37: _dl_map_object_deps (dl-deps.c:699)
+==89054==    by 0x34C9C03078: dl_main (rtld.c:1734)
+==89054==    by 0x34C9C16094: _dl_sysdep_start (dl-sysdep.c:249)
+==89054==    by 0x34C9C04B53: _dl_start (rtld.c:329)
+==89054==    by 0x34C9C011F7: ??? (in /usr/lib64/ld-2.18.so)
+==89054==    by 0x2: ???
+==89054==    by 0xFFF00009E: ???
+==89054==    by 0xFFF0000A7: ???
+==89054==    by 0xFFF0000AA: ???
+==89054==  Address 0x5a6 is not stack'd, malloc'd or (recently) free'd
+==89054== 
+==89054== 
+==89054== Process terminating with default action of signal 11 (SIGSEGV)
+==89054==  Bad permissions for mapped region at address 0x5A6
+==89054==    at 0x5A6: ???
+==89054==    by 0x34C9C0F049: _dl_signal_error (dl-error.c:121)
+==89054==    by 0x34C9C0DC37: _dl_map_object_deps (dl-deps.c:699)
+==89054==    by 0x34C9C03078: dl_main (rtld.c:1734)
+==89054==    by 0x34C9C16094: _dl_sysdep_start (dl-sysdep.c:249)
+==89054==    by 0x34C9C04B53: _dl_start (rtld.c:329)
+==89054==    by 0x34C9C011F7: ??? (in /usr/lib64/ld-2.18.so)
+==89054==    by 0x2: ???
+==89054==    by 0xFFF00009E: ???
+==89054==    by 0xFFF0000A7: ???
+==89054==    by 0xFFF0000AA: ???
+==89054== 
+==89054== HEAP SUMMARY:
+==89054==     in use at exit: 0 bytes in 0 blocks
+==89054==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==89054== 
+==89054== All heap blocks were freed -- no leaks are possible
+==89054== 
+==89054== For counts of detected and suppressed errors, rerun with: -v
+==89054== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 2 from 2)
